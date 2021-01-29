@@ -4,7 +4,7 @@ listaTareas = [
     
     {
         'idTarea': 0,
-        'titulo': 'Estudia JavaScript',
+        'titulo': 'Estudiar JavaScript',
         'prioridad':'urgente',
     },
     {
@@ -26,6 +26,7 @@ listaTareas = [
         'idTarea': 4,
         'titulo': 'Ver la tele',
         'prioridad':'optativo',
-    }
+    },
+   
 
 ]
