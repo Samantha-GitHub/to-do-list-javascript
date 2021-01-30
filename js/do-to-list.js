@@ -53,12 +53,13 @@ const printTareas = function (pListaTareas) {
 
         dataIdTarea++;
         tareas.innerHTML +=
-        `<article style="background-color:${miColor}" "data-id=${dataIdTarea}">
+        `<article style="background-color:${miColor}" data-id='${dataIdTarea}'>
         
         <h1>${tarea.titulo}</h1>   <button id="btn-eliminar">ELIMINAR</button>
        
     
         </article>` ;
+        llamarBotones()
   
     };
     
@@ -146,7 +147,7 @@ const inputIntroduceTarea = document.querySelector('#introduce-tarea');
 const btnGuardar = document.querySelector('#btn-guardar');
 const alert = document.querySelector('#alert');
 let SelectSeleccionarPrioridad = document.querySelector('#seleccionar-prioridad')
-let lengthIdTarea = listaTareas.length;
+
 
 btnGuardar.addEventListener('click', getDataForm);
 
@@ -184,12 +185,14 @@ function getDataForm(event) {
 
         dataIdTarea++;
         tareas.innerHTML +=
-        `<article style="background-color:${color}" "data-id=${dataIdTarea}">
+        `<article style="background-color:${color}" data-id='${dataIdTarea}'>
         
         <h1>${tituloTarea}</h1>   <button id="btn-eliminar">ELIMINAR</button>
        
     
         </article>` ;
+
+        llamarBotones()
 
         const json = {
 
@@ -207,6 +210,44 @@ function getDataForm(event) {
 
 
 }
+
+// Borrar tareas
+
+function llamarBotones() {
+ 
+    let borrar = document.querySelectorAll('#btn-eliminar');
+
+    for (let buton of borrar) {
+
+        buton.addEventListener('click', borrarElementos);
+    }
+    
+};
+
+
+
+function borrarElementos(event) {
+
+    let article = event.target.parentNode;   
+    let id = parseInt(article.dataset.id);
+   
+
+    article.parentNode.removeChild(article);
+
+    let position = listaTareas.findIndex(tarea => tarea.idTarea == id);
+
+    listaTareas.splice(position, 1);
+    
+
+  /*   event.parentNode.parentNode.removeChild(event.parentNode);
+ */
+
+}  
+
+
+
+
+
 
 
 
