@@ -2,7 +2,7 @@
 
 
 let tareas = document.querySelector('#tareas');
-let idTarea = 0;
+let dataIdTarea = 0;
 
 const printTareas = function (pListaTareas) { 
     
@@ -52,7 +52,7 @@ const printTareas = function (pListaTareas) {
         } */
 
         tareas.innerHTML +=
-        `<article style="background-color:${miColor}" "data-id=${idTarea}">
+        `<article style="background-color:${miColor}" "data-id=${dataIdTarea}">
         
         <h1>${tarea.titulo}</h1>   <button id="btn-eliminar">ELIMINAR</button>
        
@@ -64,6 +64,11 @@ const printTareas = function (pListaTareas) {
 };
 
 printTareas(listaTareas);
+
+
+
+
+
 
 //FILTRAR TAREAS POR PRIORIDAD//
 
@@ -100,35 +105,31 @@ function getPrioridad(event) {
 
 //MOSTRAR TAREA ESCRIBIENDO//
 
+let inputBuscarTarea = document.querySelector('#buscar-tarea');
+inputBuscarTarea.addEventListener('keydown', getBuscarData);
+
+function getBuscarData(event) { 
+
+    if (event.keyCode == 13 || event.type == 'keydown') {
+
+        let palabraBuscar = inputBuscarTarea.value;
+
+        let listaPorTeclado = searchByWord(palabraBuscar, listaTareas)
+        printTareas(listaPorTeclado);
+        
+    }
+};
 
 
 
+function searchByWord(pLetra, pListaTareas) { 
 
+    const filtrarPorTeclado = pListaTareas.filter(tarea => {
+        return tarea.titulo.toLowerCase().includes(pLetra.toLowerCase());
+    })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return filtrarPorTeclado;
+};
 
 
 
