@@ -51,6 +51,7 @@ const printTareas = function (pListaTareas) {
 
         } */
 
+        dataIdTarea++;
         tareas.innerHTML +=
         `<article style="background-color:${miColor}" "data-id=${dataIdTarea}">
         
@@ -106,11 +107,11 @@ function getPrioridad(event) {
 //MOSTRAR TAREA ESCRIBIENDO//
 
 let inputBuscarTarea = document.querySelector('#buscar-tarea');
-inputBuscarTarea.addEventListener('keydown', getBuscarData);
+inputBuscarTarea.addEventListener('keyup', getBuscarData);
 
 function getBuscarData(event) { 
 
-    if (event.keyCode == 13 || event.type == 'keydown') {
+    if (event.keyCode == 13 || event.type == 'keyup') {
 
         let palabraBuscar = inputBuscarTarea.value;
 
@@ -135,49 +136,15 @@ function searchByWord(pLetra, pListaTareas) {
 
 
 
-
-
-
 //ANADIR TAREAS//
 
 
-////   1er crear save Tarea:
-
-/* function saveTarea(pTarea) {
-
-    let duplicado = false; 
-
-    for (let tarea of listaTareas) {
-
-        if (tarea.titulo === pTarea.titulo && tarea.prioridad === pTarea.prioridad) {
-            
-            duplicado = true;
-
-        } 
-        
-    }
-    if (duplicado === false) {
-        
-        listaTareas.push(pTarea);
-        printTareas(pTarea);
-        console.log(listaTareas);
-
-    } else {
-        alert('Tarea existante')
-    }
-
-
-    
-
-} */
-
-
-// 2ndo crear el newTarea
 
 
 
-/* const inputIntroduceTarea = document.querySelector('#introduce-tarea');
+const inputIntroduceTarea = document.querySelector('#introduce-tarea');
 const btnGuardar = document.querySelector('#btn-guardar');
+const alert = document.querySelector('#alert');
 let SelectSeleccionarPrioridad = document.querySelector('#seleccionar-prioridad')
 let lengthIdTarea = listaTareas.length;
 
@@ -191,22 +158,55 @@ function getDataForm(event) {
     const prioridadTarea = SelectSeleccionarPrioridad.value;
 
     if (tituloTarea != "" && prioridadTarea != "") {
-        
-        const newTarea = {
 
-            idTarea: ++lengthIdTarea,
-            titulo: tituloTarea,
-            prioridad: prioridadTarea
+        let color = '';
+        alert.style.display = 'none';
+
+
+        switch (prioridadTarea) {
+
+            case 'urgente':
+                color = 'red';
+    
+                
+                break;
+            
+            case 'diaria':
+                color = 'blue';
+                    
+                break;
+            
+            case 'optativo':
+                color = 'green';
+                    
+                break;
         }
 
-        saveTarea(newTarea)
+        dataIdTarea++;
+        tareas.innerHTML +=
+        `<article style="background-color:${color}" "data-id=${dataIdTarea}">
         
+        <h1>${tituloTarea}</h1>   <button id="btn-eliminar">ELIMINAR</button>
+       
+    
+        </article>` ;
+
+        const json = {
+
+            idTarea: dataIdTarea,
+            titulo: tituloTarea,
+            prioridad: prioridadTarea,
+        };
+
+        listaTareas.push(json);          
+
     } else {
-        alert(`<p> Debes rellenar todos los campos </p>`)
+        
+        alert.style.display = 'block';
     }
 
 
-} */
+}
 
-// Borrar tareas
+
 
