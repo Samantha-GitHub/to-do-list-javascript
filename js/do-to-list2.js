@@ -142,7 +142,7 @@ function getDataForm(event) {
         tareas.innerHTML +=
         `<article style="background-color:${color}" data-id='${dataIdTarea}'>
         
-        <h1>${tituloTarea}</h1>   <button id="btn-eliminar">ELIMINAR</button>
+        <h1>${tituloTarea}</h1>  <button id="btn-eliminar">ELIMINAR</button>
        
     
         </article>` ;

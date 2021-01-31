@@ -7,13 +7,15 @@
 body{
 
     width: 50%;
-    margin: 50px auto;
+    height: auto;
+    margin: 150px auto;
+    background-color: rgba(184, 43, 43, 0.308);
 }
 
 
 header{
 
-    background-color: rgba(199, 196, 196, 0.281);
+    background-color:  rgba(158, 54, 54, 0.808);
     padding: 20px;
  
 }
@@ -30,10 +32,15 @@ header{
 }
 
 main{
-    background-color: rgba(0, 0, 0, 0.705);
+    background-color: rgba(41, 1, 1, 0.705);
     padding: 15px;
     color: white;
     font-weight: bold;
+}
+
+#tareas{
+
+    margin-top: 20px;
 }
 
 #tareas article{
@@ -63,6 +70,14 @@ main{
 #tareas .optativo{
 
     background-color:green;
+}
+
+
+#btn-eliminar:hover{
+
+background-color: black;
+color:white;
+
 }
 
 
