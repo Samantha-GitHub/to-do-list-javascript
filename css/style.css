@@ -1,8 +1,13 @@
+/* ---------------------------GLOBAL----------------------------------------------- */
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
+
+/* ---------------------------SECCIONES----------------------------------------------- */
 
 body{
 
@@ -10,15 +15,37 @@ body{
     height: auto;
     margin: 150px auto;
     background-color: rgba(184, 43, 43, 0.308);
+
+    
 }
 
 
 header{
 
     background-color:  rgba(158, 54, 54, 0.808);
+  
     padding: 20px;
  
 }
+
+main{
+    background-color: rgba(41, 1, 1, 0.705);
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+input{
+
+    padding: 4px;
+}
+
+select{
+
+    padding: 4px;
+}
+
+/* ---------------------------ALERT----------------------------------------------- */
 
 #alert{
 
@@ -31,12 +58,7 @@ header{
   
 }
 
-main{
-    background-color: rgba(41, 1, 1, 0.705);
-    padding: 15px;
-    color: white;
-    font-weight: bold;
-}
+/* -------------------------------------------------------------------------- */
 
 #tareas{
 
@@ -49,40 +71,51 @@ main{
     position: relative;
 }
 
+/* ---------------------------BOTONES----------------------------------------------- */
+
 #tareas article #btn-eliminar{
 
     position: absolute;
     right: 20px;
     bottom: 10px;
-    border-radius: 8%;
 }
+
+#btn-eliminar:hover{
+
+    background-color: black;
+    color: burlywood;
+    
+}
+
+button{
+
+    background-color: burlywood;
+    color: black;
+    padding: 3px;
+}
+
+/* ---------------------------PRIORIDADES----------------------------------------------- */
 
 #tareas .urgente{
 
-    background-color: red;
+    background-color: rgb(209, 28, 28);
 }
 
 #tareas .diaria{
 
-    background-color:blue;
+    background-color:rgb(35, 35, 209);
 }
 
 #tareas .optativo{
 
-    background-color:green;
+    background-color:rgb(18, 131, 18);
 }
 
-
-#btn-eliminar:hover{
-
-background-color: black;
-color:white;
-
-}
-
+/* ---------------------------FOOTER----------------------------------------------- */
 
 #samantha{
   margin: 15px 0px 0px 25px;
+ 
 }
 
 

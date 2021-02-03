@@ -122,18 +122,18 @@ function getDataForm(event) {
         switch (prioridadTarea) {
 
             case 'urgente':
-                color = 'red';
+                color = ' rgb(209, 28, 28)';
     
                 
                 break;
             
             case 'diaria':
-                color = 'blue';
+                color = 'rgb(35, 35, 209)';
                     
                 break;
             
             case 'optativo':
-                color = 'green';
+                color = 'rgb(18, 131, 18)';
                     
                 break;
         }
